@@ -2,7 +2,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-const int64_t NUM_ASCII_OFFSET = 48;
 const int64_t WHEEL_SIZE = 100;
 
 int main(void)
@@ -31,10 +30,10 @@ int main(void)
         for (size_t i = 1; i < line_length; i++) {
             char a = line[i];
 
-            if (a < NUM_ASCII_OFFSET || a > NUM_ASCII_OFFSET + 9)
+            if (a < '0' || a > '9')
                 continue;
 
-            number = number * 10 + ((int64_t)a - NUM_ASCII_OFFSET);
+            number = number * 10 + ((int64_t)(a - '0'));
 
             // printf("char(%c) int(%ld) tot(%ld)\n", a, (int64_t)a, number);
         }
