@@ -95,8 +95,8 @@ int main(int argc, char *argv[])
                 if (!delete_current)
                     continue;
 
-                limits_lower[i] = new_start;
-                limits_upper[i] = new_stop;
+                limits_lower[i] = new_start, start = new_start;
+                limits_upper[i] = new_stop, stop = new_stop;
 
                 for (int64_t k = j; k < limit_count - 1; ++k)
                     limits_lower[k] = limits_lower[k + 1], limits_upper[k] = limits_upper[k + 1];
